@@ -76,8 +76,11 @@ static void fp_init()
   if (!supports_extension('F'))
     return;
 
-  assert(read_csr(mstatus) & MSTATUS_FS);
-
+  if((read_csr(mstatus) & MSTATUS_FS) == 0){
+    write_csr(fcsr, 0);
+    return;
+  }
+  //assert(read_csr(mstatus) & MSTATUS_FS);
 #ifdef __riscv_flen
   for (int i = 0; i < 32; i++)
     init_fp_reg(i);
