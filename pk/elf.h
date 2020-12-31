@@ -24,6 +24,7 @@
 #define ET_DYN 3
 
 #define EF_RISCV_RVC 1
+#define EF_RISCV_RVE 8
 
 #define PT_LOAD 1
 #define PT_INTERP 3
