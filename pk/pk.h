@@ -20,7 +20,6 @@ typedef struct
   long insn;
 } trapframe_t;
 
-int elf_flags;
 #define panic(s,...) do { do_panic(s"\n", ##__VA_ARGS__); } while(0)
 #define kassert(cond) do { if(!(cond)) kassert_fail(""#cond); } while(0)
 void do_panic(const char* s, ...) __attribute__((noreturn));
